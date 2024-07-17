@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creciendo Juntos Farming Online Textbook</title>
+    <title>Creciendo Juntos Libro de texto en línea - Agricultura</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,6 +17,7 @@
             color: white;
             padding: 20px 0;
             text-align: center;
+            position: relative;
         }
         nav {
             background-color: #3e8e41;
@@ -36,6 +37,11 @@
             padding: 20px;
             text-align: center;
         }
+        .content p {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
         footer {
             background-color: #4caf50;
             color: white;
@@ -47,23 +53,68 @@
             width: 200px;
             margin-top: 10px;
         }
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .language-toggle button {
+            background-color: #3e8e41;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        .language-toggle button:hover {
+            background-color: #45a049;
+        }
     </style>
+    <script>
+    function switchLanguage(lang) {
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+        });
+        document.documentElement.lang = lang; 
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        switchLanguage('es'); // Default language set to Spanish
+    });
+</script>
+
 </head>
 <body>
     <header>
-        <h1>Creciendo Juntos Farming Online Textbook</h1>
+        <h1>Creciendo Juntos Libro de texto en línea - Agricultura</h1>
+        <div class="language-toggle">
+            <button onclick="switchLanguage('en');">English</button>
+            <button onclick="switchLanguage('es');">Español</button>
+        </div>
     </header>
     <nav>
-        <a href="index.html">Homepage</a>
-        <a href="crop_information.html">Crop Information</a>
-        <a href="plague_information.html">Plague Information</a>
+        <a href="index.html" onclick="switchLanguage('es');">Inicio</a>
+        <a href="crop_information.html" onclick="switchLanguage('es');">Información sobre Cultivos</a>
+        <a href="plague_information.html" onclick="switchLanguage('es');">Información sobre Plagas</a>
     </nav>
     <div class="content">
-        <h2>Welcome to the Creciendo Juntos Farming Online Textbook</h2>
-        <p>This online textbook is designed to provide comprehensive information about farming practices, crop information, and dealing with plagues.</p>
+        <div data-lang="en">
+            <h2>Welcome to the Creciendo Juntos Farming Online Textbook</h2>
+            <p>This online textbook is designed to provide comprehensive information about farming practices, crop information, and dealing with plagues. Below are links to more detailed sections:</p>
+            <h3><a href="crop_information.html">Crop Information</a></h3>
+            <p>In the Crop Information section, you'll find detailed guides on various crops, including their characteristics, optimal growing conditions, transplanting activities, and harvesting details. Explore this section to enhance your knowledge and practices for growing crops like chili, onion, cucumber, lettuce, cherry tomato, cilantro, and kabocha squash.</p>
+            <h3><a href="plague_information.html">Plague Information</a></h3>
+            <p>The Plague Information section provides essential information on identifying, preventing, and managing pests and diseases that can affect your crops. Learn about common plagues, what crops are affected, symptoms of infestation, and a photo gallery to ensure the health and productivity of your crops.</p>
+        </div>
+        <div data-lang="es" style="display:none;">
+            <h2>Bienvenido al Libro de Texto en Línea Creciendo Juntos Farming</h2>
+            <p>Este libro de texto en línea está diseñado para proporcionar información completa sobre las prácticas agrícolas, la información sobre los cultivos y el manejo de plagas. A continuación, se encuentran enlaces a secciones más detalladas:</p>
+            <h3><a href="crop_information.html">Información sobre Cultivos</a></h3>
+            <p>En la sección de Información sobre Cultivos, encontrarás guías detalladas sobre varios cultivos, incluidas sus características, condiciones óptimas de crecimiento, actividades de trasplante y detalles de cosecha. Explora esta sección para mejorar tu conocimiento y prácticas para cultivar cultivos como chile, cebolla, pepino, lechuga, tomate cherry, cilantro y calabaza kabocha.</p>
+            <h3><a href="plague_information.html">Información sobre Plagas</a></h3>
+            <p>La sección de Información sobre Plagas proporciona información esencial sobre la identificación, prevención y manejo de plagas y enfermedades que pueden afectar a tus cultivos. Aprende sobre plagas comunes, qué cultivos se ven afectados, síntomas de infestación y una galería de fotos para garantizar la salud y la productividad de tus cultivos.</p>
+        </div>
     </div>
     <footer>
-        <p>&copy; 2024 Creciendo Juntos Farming Online Textbook</p>
+        <p>&copy; 2024 Creciendo Juntos Libro de texto en línea - Agricultura</p>
         <img src="image.png" alt="Creciendo Juntos Logo">
     </footer>
 </body>

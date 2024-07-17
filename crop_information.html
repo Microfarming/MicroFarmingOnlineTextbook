@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creciendo Juntos Farming Online Textbook - Crop Information</title>
+    <title>Creciendo Juntos Libro de texto en línea - Agricultura - Crop Information</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,6 +17,7 @@
             color: white;
             padding: 20px 0;
             text-align: center;
+            position: relative;
         }
         nav {
             background-color: #3e8e41;
@@ -35,21 +36,34 @@
         .content {
             padding: 20px;
         }
-        .toc {
-            background-color: #e0e0e0;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
+        h2 {
+            text-align: center;
         }
-        .toc h2 {
-            margin-top: 0;
+        .toc {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .toc-title {
+            font-weight: bold;
+            margin-bottom: 10px;
         }
         .toc a {
+            display: block;
+            margin: 5px 0;
             color: #4caf50;
             text-decoration: none;
         }
         .toc a:hover {
             text-decoration: underline;
+        }
+        .section-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
         }
         .crop {
             margin-bottom: 40px;
@@ -69,6 +83,11 @@
             margin-bottom: 40px;
             border: 1px solid #4caf50;
         }
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
         footer {
             background-color: #4caf50;
             color: white;
@@ -78,281 +97,1196 @@
         }
         footer img {
             width: 200px;
-            margin-top: 10px;
+            display: block;
+            margin: 10px auto; /* Centering the image */
         }
-        hr {
-            border: 1px solid #ccc;
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .language-toggle button {
+            background-color: #3e8e41;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        .language-toggle button:hover {
+            background-color: #45a049;
         }
     </style>
+    <script>
+    function switchLanguage(lang) {
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+        });
+        document.documentElement.lang = lang; 
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        switchLanguage('es'); // Default language set to Spanish
+    });
+</script>
+
 </head>
 <body>
     <header>
-        <h1>Creciendo Juntos Farming Online Textbook</h1>
+        <h1>Creciendo Juntos Libro de texto en línea - Agricultura</h1>
+        <div class="language-toggle">
+            <button onclick="switchLanguage('en');">English</button>
+            <button onclick="switchLanguage('es');">Español</button>
+        </div>
     </header>
     <nav>
-        <a href="index.html">Homepage</a>
-        <a href="crop_information.html">Crop Information</a>
-        <a href="plague_information.html">Plague Information</a>
+        <a href="index.html" onclick="switchLanguage('es');">Inicio</a>
+        <a href="crop_information.html" onclick="switchLanguage('es');">Información sobre Cultivos</a>
+        <a href="plague_information.html" onclick="switchLanguage('es');">Información sobre Plagas</a>
     </nav>
+
     <div class="content">
-        <div class="toc">
-            <h2>Table of Contents</h2>
-           <ul class="crop-list">
-    <li><a href="#general-recommendations">General Recommendations</a></li>
-    <li><a href="#chili">Chili</a></li>
-    <li><a href="#tomato">Tomato</a></li>
-    <li><a href="#onion">Onion</a></li>
-    <li><a href="#cabbage">Cabbage</a></li>
-    <li><a href="#cucumber">Cucumber</a></li>
-    <li><a href="#lettuce">Lettuce</a></li>
-    <li><a href="#cherry-tomato">Cherry Tomato</a></li>
-    <li><a href="#cilantro">Cilantro</a></li>
-    <li><a href="#kabocha-squash">Kabocha Squash</a></li>
-    <li><a href="#butternut-squash">Butternut Squash</a></li>
-    <li><a href="#radish">Radish</a></li>
-    <li><a href="#zucchini">Zucchini</a></li>
-    <li><a href="#green-bean">Green Bean</a></li>
-    <li><a href="#jalapenos">Jalapenos</a></li>
-    <li><a href="#aromatics">Aromatics (Herbs)</a></li>
-</ul>
+        <div data-lang="en">
+            <h2>Crop Information</h2>
+            <p style="text-align: center;">Information on common crops and steps on how to farm them.</p>
+            
+            <div class="toc">
+                <div class="toc-title">Table of Contents</div>
+                <a href="#general-recommendations">General Recommendations</a>
+                <a href="#chili">Chili</a>
+                <a href="#tomato">Tomato</a>
+                <a href="#onion">Onion</a>
+                <a href="#cucumber">Cucumber</a>
+                <a href="#lettuce">Lettuce</a>
+                <a href="#cherry-tomato">Cherry Tomato</a>
+                <a href="#cilantro">Cilantro</a>
+                <a href="#kabocha-squash">Kabocha Squash</a>
+                <a href="#butternut-squash">Butternut Squash</a>
+                <a href="#radish">Radish</a>
+                <a href="#zucchini">Zucchini</a>
+                <a href="#green-bean">Green Bean</a>
+                <a href="#jalapenos">Jalapenos</a>
+                <a href="#cabbage">Cabbage</a>
+            </div>
 
-
-
-
-        </div>
-
-        <div id="general-recommendations" class="general-recommendations">
-            <h3>General Recommendations</h3>
-            <p><strong>Transplanting:</strong> Should be done early in the morning, finishing before 9 AM, or in the afternoon, starting after 3:30 PM.</p>
-            <p><strong>Loss Review:</strong> Check for losses in the first 5 days to replace them.</p>
-            <p><strong>Watering:</strong> For the first 2 weeks, water 3 times a day to reach field capacity (adequate moisture). From the 3rd week, water twice a day, monitoring the moisture to maintain uniform moisture. During the fruiting stage, water 3 times a day again to maintain uniform moisture.</p>
-            <p><strong>Pest and Disease Monitoring:</strong> Daily monitoring to identify and report pests and diseases, as open field cultivation is prone to be affected at any time.</p>
-            <p><strong>Drip Tape Review:</strong> Ensure drip tapes are in the correct position, with the dripper facing up and checking for leaks.</p>
-            <p><strong>Mulch Plastic Review:</strong> Ensure mulch plastic is tight enough to avoid hot air currents that can damage the roots internally.</p>
-            <p><strong>Lettuce and Cabbage Harvesting:</strong> Activate watering 1 hour before harvesting to prevent crop dehydration.</p>
-            <p><strong>Basket Use:</strong> Do not use field baskets for final product shipment.</p>
-            <p><strong>Traceability Control:</strong> Keep records to demonstrate traceability, including germination date, transplant date, products applied for any disease or pest, harvest start and end dates, visit records, labeling of gardens with crop names and transplant dates.</p>
-            <p><strong>Climate Change Adaptation:</strong> Construction of special roofs for plant protection against rain and high temperatures (optional based on monetary capital for investment). Estimated time for 120 linear meters of any crop is approximately 24 hours.</p>
-            <p><strong>Physical Control for Pests:</strong> Use physical controllers such as natural and artificial barriers. Estimated time for 120 linear meters of any crop is approximately 24 hours.</p>
-        </div>
-
-        <div id="chili" class="crop">
-            <h3>Chili</h3>
-            <img src="Chili.jpg" alt="Chili">
-            <p><strong>Characteristics</strong><br>Germination: 9 days, 3.7 units<br>Transplant: 25 days<br>Plant Spacing: 30 cm<br># Plants (m): 3.33 plants<br>Harvest: 70 days<br>Rows: 1 row</p>
-            <h4>Transplanting Activities:</h4>
-            <p>Estimated time for 120 linear meters: 4 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-            <h4>Staking:</h4>
-            <p>Estimated time for 120 linear meters: 48 hours.<br>Stakes are the bases where the ropes that will support the plants are tied to prevent breakage from wind, weight, rain, etc. They should be 2.5 meters apart and 2.30 meters high.</p>
-            <h4>Tying:</h4>
-            <p>Estimated time for 120 linear meters: 12 hours.<br>When plants reach approximately 20 centimeters, they should be tied for protection, avoiding damage and losses.</p>
-            <h4>Pruning:</h4>
-            <p>When the crop starts to flower, formative pruning should be done, starting to induce 3 axes to achieve different levels at harvest time.</p>
-            <h4>Harvesting:</h4>
-            <p>Estimated start: Approximately 70 days after transplanting.<br>First two weeks: Estimated time for 120 linear meters is 2 hours.<br>Subsequent weeks: Estimated time for 120 linear meters is 4 hours, as production increases.</p>
-            <hr>
-        </div>
-
-        <div class="crop" id="tomato">
-            <img src="Tomato.jpg" alt="Tomato">
-            <div>
-                <h3>Tomato</h3>
-                <p><strong>Characteristics</strong><br>Germination: 7 days, 3.7 units<br>Transplant: 23 days<br>Plant Spacing: 30 cm<br># Plants (m): 3.33 plants<br>Harvest: 70 days<br>Rows: 1 row</p>
-                <h4>Transplanting Activities:</h4>
-                <p>Estimated time for 120 linear meters: 4 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-                <h4>Staking:</h4>
-                <p>Estimated time for 120 linear meters: 48 hours.<br>Stakes are the bases where the ropes that will support the plants are tied to prevent breakage from wind, weight, rain, etc. They should be 2.5 meters apart and 2.30 meters high.</p>
-                <h4>Tying:</h4>
-                <p>Estimated time for 120 linear meters: 12 hours.<br>When plants reach approximately 20 centimeters, they should be tied for protection, avoiding damage and losses.</p>
-                <h4>Pruning:</h4>
-                <p>When the crop starts to flower, formative pruning should be done, starting to induce 3 axes to achieve different levels at harvest time.</p>
-                <h4>Harvesting:</h4>
-                <p>Estimated start: Approximately 70 days after transplanting.<br>First two weeks: Estimated time for 120 linear meters is 2 hours.<br>Subsequent weeks: Estimated time for 120 linear meters is 4 hours, as production increases.</p>
-                <hr>
+            <div id="general-recommendations" class="general-recommendations">
+                <h3>General Recommendations</h3>
+                <p><strong>Transplanting:</strong> Should be done early in the morning, finishing before 9 AM, or in the afternoon, starting after 3:30 PM.</p>
+                <p><strong>Loss Review:</strong> Check for losses in the first 5 days to replace them.</p>
+                <p><strong>Watering:</strong> For the first 2 weeks, water 3 times a day to reach field capacity (adequate moisture). From the 3rd week, water twice a day, monitoring the moisture to maintain uniform moisture. During the fruiting stage, water 3 times a day again to maintain uniform moisture.</p>
+                <p><strong>Pest and Disease Monitoring:</strong> Daily monitoring to identify and report pests and diseases, as open field cultivation is prone to be affected at any time.</p>
+                <p><strong>Drip Tape Review:</strong> Ensure drip tapes are in the correct position, with the dripper facing up and checking for leaks.</p>
+                <p><strong>Mulch Plastic Review:</strong> Ensure mulch plastic is tight enough to avoid hot air currents that can damage the roots internally.</p>
+                <p><strong>Lettuce and Cabbage Harvesting:</strong> Activate watering 1 hour before harvesting to prevent crop dehydration.</p>
+                <p><strong>Basket Use:</strong> Do not use field baskets for final product shipment.</p>
+                <p><strong>Traceability Control:</strong> Keep records to demonstrate traceability, including germination date, transplant date, products applied for any disease or pest, harvest start and end dates, visit records, labeling of gardens with crop names and transplant dates.</p>
+                <p><strong>Climate Change Adaptation:</strong> Construction of special roofs for plant protection against rain and high temperatures (optional based on monetary capital for investment). Estimated time for 120 linear meters of any crop is approximately 24 hours.</p>
+                <p><strong>Physical Control for Pests:</strong> Use physical controllers such as natural and artificial barriers. Estimated time for 120 linear meters of any crop is approximately 24 hours.</p>
             </div>
         </div>
+        <div data-lang="es" style="display:none;">
+            <h2>Información sobre Cultivos</h2>
+            <p style="text-align: center;">Información sobre cultivos comunes y pasos sobre cómo cultivarlos.</p>
+            
+            <div class="toc">
+                <div class="toc-title">Tabla de Contenidos</div>
+                <a href="#general-recommendations">Recomendaciones Generales</a>
+                <a href="#chili">Chile</a>
+                <a href="#tomato">Tomate</a>
+                <a href="#onion">Cebolla</a>
+                <a href="#cucumber">Pepino</a>
+                <a href="#lettuce">Lechuga</a>
+                <a href="#cherry-tomato">Tomate Cherry</a>
+                <a href="#cilantro">Cilantro</a>
+                <a href="#kabocha-squash">Ayote Kabocha</a>
+                <a href="#butternut-squash">Ayote Mantequilla</a>
+                <a href="#radish">Rabanito</a>
+                <a href="#zucchini">Zuquinni</a>
+                <a href="#green-bean">Vainica</a>
+                <a href="#jalapenos">Jalapeños</a>
+                <a href="#cabbage">Repollo</a>
+            </div>
 
-       <div id="onion" class="crop">
-    <h3>Onion</h3>
-    <img src="Onion.jpg" alt="Onion">
-    <p><strong>Characteristics</strong><br>Germination: 8 days, 120 units<br>Transplant: 25 days<br>Plant Spacing: 12 cm<br># Plants (m): 50 plants<br>Harvest: 90 days<br>Rows: 6 rows</p>
-    <h4>Transplanting Activities:</h4>
-    <p>Estimated time for 120 linear meters: 15 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-    <h4>Harvesting:</h4>
-    <p>Estimated start: Approximately 100 days after transplanting.<br>Estimated time for 120 linear meters is 8 hours.</p>
+            <div id="general-recommendations" class="general-recommendations">
+                <h3>Recomendaciones Generales</h3>
+                <p><strong>Transplante:</strong> Debe hacerse temprano por la mañana, terminando antes de las 9 AM, o por la tarde, comenzando después de las 3:30 PM.</p>
+                <p><strong>Revisión de Pérdidas:</strong> Verificar las pérdidas en los primeros 5 días para reemplazarlas.</p>
+                <p><strong>Riego:</strong> Durante las primeras 2 semanas, regar 3 veces al día para alcanzar la capacidad de campo (humedad adecuada). A partir de la 3ra semana, regar dos veces al día, monitoreando la humedad para mantenerla uniforme. Durante la etapa de fructificación, regar 3 veces al día nuevamente para mantener la humedad uniforme.</p>
+                <p><strong>Monitoreo de Plagas y Enfermedades:</strong> Monitoreo diario para identificar y reportar plagas y enfermedades, ya que el cultivo al aire libre puede verse afectado en cualquier momento.</p>
+                <p><strong>Revisión de Cinta de Goteo:</strong> Asegurarse de que las cintas de goteo estén en la posición correcta, con el gotero hacia arriba y verificar si hay fugas.</p>
+                <p><strong>Revisión de Plástico de Mulch:</strong> Asegurarse de que el plástico de mulch esté lo suficientemente ajustado para evitar corrientes de aire caliente que puedan dañar las raíces internamente.</p>
+                <p><strong>Cosecha de Lechuga y Repollo:</strong> Activar el riego 1 hora antes de la cosecha para evitar la deshidratación del cultivo.</p>
+                <p><strong>Uso de Canastas:</strong> No utilizar canastas de campo para el envío del producto final.</p>
+                <p><strong>Control de Trazabilidad:</strong> Mantener registros para demostrar trazabilidad, incluyendo fecha de germinación, fecha de trasplante, productos aplicados para cualquier enfermedad o plaga, fechas de inicio y fin de cosecha, registros de visitas, etiquetado de jardines con nombres de cultivos y fechas de trasplante.</p>
+                <p><strong>Adaptación al Cambio Climático:</strong> Construcción de techos especiales para la protección de las plantas contra la lluvia y altas temperaturas (opcional según el capital monetario para la inversión). El tiempo estimado para 120 metros lineales de cualquier cultivo es aproximadamente 24 horas.</p>
+                <p><strong>Control Físico de Plagas:</strong> Utilizar controladores físicos como barreras naturales y artificiales. El tiempo estimado para 120 metros lineales de cualquier cultivo es aproximadamente 24 horas.</p>
+            </div>
+</div>
+
+
+  <div id="chili" class="crop">
+    <div data-lang="en">
+        <h3>Chili</h3>
+        <img src="Chili.jpg" alt="Chili">
+        <p><strong>Characteristics</strong><br>Germination: 9 days, 3.7 units<br>Transplant: 25 days<br>Plant Spacing: 30 cm<br># Plants (m): 3.33 plants<br>Harvest: 70 days<br>Rows: 1 row</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+        <h4>3. Staking and Tying</h4>
+        <p>Time: Staking - 48 hours; Tying - 12 hours per 120 linear meters.<br>
+        Install Support Stakes: Place stakes every 2.5 meters in length and 2.3 meters in height to support the plants.<br>
+        Tie Plants: When plants reach about 20 cm in height, tie them to the stakes for protection.</p>
+        <h4>4. Cleaning and Pruning</h4>
+        <p>Time: Cleaning - 4 hours (minimum 3 times a week); Pruning - as needed.<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.<br>
+        Formative Pruning: Prune when the crop starts to flower to create three main branches for different harvest levels.</p>
+        <h4>5. Harvest</h4>
+        <p>Time: Approximately 2 hours initially, then 4 hours per 120 linear meters.<br>
+        Start of Harvest: Begin harvesting around day 70 after transplanting. Initially, it takes 2 hours per 120 linear meters, increasing to 4 hours as production rises.</p>
+        <h4>6. Post-Harvest Activities</h4>
+        <p>Remove Finished Plants: Uproot and clean the beds, disinfect, apply microorganisms, and prepare for new transplants.</p>
+        <h4>7. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+    </div>
+    <div data-lang="es">
+        <h3>Chile</h3>
+        <img src="Chili.jpg" alt="Chile">
+        <p><strong>Características</strong><br>Germinación: 9 días, 3.7 unidades<br>Trasplante: 25 días<br>Espaciado de Plantas: 30 cm<br># Plantas (m): 3.33 plantas<br>Cosecha: 70 días<br>Filas: 1 fila</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+        <h4>3. Soporte y Atado</h4>
+        <p>Tiempo: Soporte - 48 horas; Atado - 12 horas por 120 metros lineales.<br>
+        Instalar Estacas de Soporte: Colocar estacas cada 2.5 metros de longitud y 2.3 metros de altura para soportar las plantas.<br>
+        Atar Plantas: Cuando las plantas alcancen aproximadamente 20 cm de altura, atarlas a las estacas para protección.</p>
+        <h4>4. Limpieza y Poda</h4>
+        <p>Tiempo: Limpieza - 4 horas (mínimo 3 veces a la semana); Poda - según sea necesario.<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.<br>
+        Poda Formativa: Podar cuando el cultivo comience a florecer para crear tres ramas principales para diferentes niveles de cosecha.</p>
+        <h4>5. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 2 horas inicialmente, luego 4 horas por 120 metros lineales.<br>
+        Inicio de la Cosecha: Comenzar la cosecha alrededor del día 70 después del trasplante. Inicialmente, toma 2 horas por 120 metros lineales, aumentando a 4 horas a medida que aumenta la producción.</p>
+        <h4>6. Actividades Posteriores a la Cosecha</h4>
+        <p>Eliminar Plantas Terminadas: Desenterrar y limpiar las camas, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+        <h4>7. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+    </div>
     <hr>
 </div>
 
+<div class="crop" id="tomato">
+    <div data-lang="en">
+        <h3>Tomato</h3>
+        <img src="Tomato.jpg" alt="Tomato">
+        <p><strong>Characteristics</strong><br>Germination: 7 days, 3.7 units<br>Transplant: 23 days<br>Plant Spacing: 30 cm<br># Plants (m): 3.33 plants<br>Harvest: 70 days<br>Rows: 1 row</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+        <h4>3. Staking and Tying</h4>
+        <p>Time: Staking - 48 hours; Tying - 12 hours per 120 linear meters.<br>
+        Install Support Stakes: Place stakes every 2.5 meters in length and 2.3 meters in height to support the plants.<br>
+        Tie Plants: When plants reach about 20 cm in height, tie them to the stakes for protection.</p>
+        <h4>4. Cleaning and Pruning</h4>
+        <p>Time: Cleaning - 4 hours (minimum 3 times a week); Pruning - as needed.<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.<br>
+        Formative Pruning: Prune when the crop starts to flower to create three main branches for different harvest levels.</p>
+        <h4>5. Harvest</h4>
+        <p>Time: Approximately 2 hours initially, then 4 hours per 120 linear meters.<br>
+        Start of Harvest: Begin harvesting around day 70 after transplanting. Initially, it takes 2 hours per 120 linear meters, increasing to 4 hours as production rises.</p>
+        <h4>6. Post-Harvest Activities</h4>
+        <p>Remove Finished Plants: Uproot and clean the beds, disinfect, apply microorganisms, and prepare for new transplants.</p>
+        <h4>7. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+    </div>
+    <div data-lang="es">
+        <h3>Tomate</h3>
+        <img src="Tomato.jpg" alt="Tomate">
+        <p><strong>Características</strong><br>Germinación: 7 días, 3.7 unidades<br>Trasplante: 23 días<br>Espaciado de Plantas: 30 cm<br># Plantas (m): 3.33 plantas<br>Cosecha: 70 días<br>Filas: 1 fila</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+        <h4>3. Soporte y Atado</h4>
+        <p>Tiempo: Soporte - 48 horas; Atado - 12 horas por 120 metros lineales.<br>
+        Instalar Estacas de Soporte: Colocar estacas cada 2.5 metros de longitud y 2.3 metros de altura para soportar las plantas.<br>
+        Atar Plantas: Cuando las plantas alcancen aproximadamente 20 cm de altura, atarlas a las estacas para protección.</p>
+        <h4>4. Limpieza y Poda</h4>
+        <p>Tiempo: Limpieza - 4 horas (mínimo 3 veces a la semana); Poda - según sea necesario.<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.<br>
+        Poda Formativa: Podar cuando el cultivo comience a florecer para crear tres ramas principales para diferentes niveles de cosecha.</p>
+        <h4>5. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 2 horas inicialmente, luego 4 horas por 120 metros lineales.<br>
+        Inicio de la Cosecha: Comenzar la cosecha alrededor del día 70 después del trasplante. Inicialmente, toma 2 horas por 120 metros lineales, aumentando a 4 horas a medida que aumenta la producción.</p>
+        <h4>6. Actividades Posteriores a la Cosecha</h4>
+        <p>Eliminar Plantas Terminadas: Desenterrar y limpiar las camas, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+        <h4>7. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+    </div>
+    <hr>
+</div>
+
+<div id="onion" class="crop">
+    <div data-lang="en">
+        <h3>Onion</h3>
+        <img src="Onion.jpg" alt="Onion">
+        <p><strong>Characteristics</strong><br>Germination: 8 days, 120 units<br>Transplant: 25 days<br>Plant Spacing: 12 cm<br># Plants (m): 50 plants<br>Harvest: 90 days<br>Rows: 6 rows</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 15 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+
+        <h4>3. Cleaning</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters (minimum 3 times a week).<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.</p>
+
+        <h4>4. Harvest</h4>
+        <p>Time: Approximately 8 hours per 120 linear meters (starting around day 90 post-transplant).<br>
+        Harvest: Harvesting onions will take around 8 hours per 120 linear meters.</p>
+
+        <h4>5. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+
+        <h4>6. Plant Removal</h4>
+        <p>Time: Approximately 8 hours per 120 linear meters.<br>
+        Remove Finished Plants: Uproot and weed the beds of finished cycles, disinfect, apply microorganisms, and prepare for new transplants.</p>
+
+        <h4>7. Germination Second Stage</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Second Stage Germination.</p>
+    </div>
+    <div data-lang="es">
+        <h3>Cebolla</h3>
+        <img src="Onion.jpg" alt="Cebolla">
+        <p><strong>Características</strong><br>Germinación: 8 días, 120 unidades<br>Trasplante: 25 días<br>Espaciado de Plantas: 12 cm<br># Plantas (m): 50 plantas<br>Cosecha: 90 días<br>Filas: 6 filas</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 15 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+
+        <h4>3. Limpieza</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales (mínimo 3 veces a la semana).<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.</p>
+
+        <h4>4. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 8 horas por 120 metros lineales (comenzando alrededor del día 90 después del trasplante).<br>
+        Cosecha: La cosecha de cebollas tomará alrededor de 8 horas por 120 metros lineales.</p>
+
+        <h4>5. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+
+        <h4>6. Eliminación de Plantas</h4>
+        <p>Tiempo: Aproximadamente 8 horas por 120 metros lineales.<br>
+        Eliminar Plantas Terminadas: Desenterrar y desherbar las camas de ciclos terminados, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+
+        <h4>7. Segunda Etapa de Germinación</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Segunda Etapa de Germinación.</p>
+    </div>
+    <hr>
+</div>
 
 <div id="cucumber" class="crop">
-    <h3>Cucumber</h3>
-    <img src="Cucumber.jpg" alt="Cucumber">
-    <p><strong>Characteristics</strong><br>Germination: 5 days, 100 units<br>Transplant: 20 days<br>Plant Spacing: 30 cm<br># Plants (m): 3.33 plants<br>Harvest: 60 days<br>Rows: 1 row</p>
-    <h4>Transplanting Activities:</h4>
-    <p>Estimated time for 120 linear meters: 6 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-    <h4>Staking:</h4>
-    <p>Estimated time for 120 linear meters: 36 hours.<br>Stakes should be placed to support the plants as they grow, ensuring they remain upright and protected.</p>
-    <h4>Trellising:</h4>
-    <p>Estimated time for 120 linear meters: 8 hours.<br>Cucumber plants should be trellised to keep them off the ground, reducing pest damage and improving fruit quality.</p>
-    <h4>Harvesting:</h4>
-    <p>Estimated start: Approximately 60 days after transplanting.<br>First two weeks: Estimated time for 120 linear meters is 3 hours.<br>Subsequent weeks: Estimated time for 120 linear meters is 5 hours, as production increases.</p>
+    <div data-lang="en">
+        <h3>Cucumber</h3>
+        <img src="Cucumber.jpg" alt="Cucumber">
+        <p><strong>Characteristics</strong><br>Germination: 4 days, 3.7 units<br>Transplant: 9 days<br>Plant Spacing: 30 cm<br># Plants (m): 3.33 plants<br>Harvest: 40 days<br>Rows: 1 row</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+
+        <h4>3. Staking and Tying</h4>
+        <p>Time: Staking - 48 hours; Tying - 12 hours per 120 linear meters.<br>
+        Install Support Stakes: Place stakes every 2.5 meters in length and 2.3 meters in height to support the plants.<br>
+        Tie Plants: When plants reach about 20 cm in height, tie them to the stakes for protection.</p>
+
+        <h4>4. Cleaning and Pruning</h4>
+        <p>Time: Cleaning - 4 hours (minimum 3 times a week); Pruning - as needed.<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.<br>
+        Formative Pruning: Prune when the crop starts to flower to create three main branches for different harvest levels.</p>
+
+        <h4>5. Harvest</h4>
+        <p>Time: Approximately 2 hours initially, then 4 hours per 120 linear meters.<br>
+        Start of Harvest: Begin harvesting around day 40 after transplanting. Initially, it takes 2 hours per 120 linear meters, increasing to 4 hours as production rises.</p>
+
+        <h4>6. Post-Harvest Activities</h4>
+        <p>Remove Finished Plants: Uproot and clean the beds, disinfect, apply microorganisms, and prepare for new transplants.</p>
+
+        <h4>7. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+    </div>
+    <div data-lang="es">
+        <h3>Pepino</h3>
+        <img src="Cucumber.jpg" alt="Pepino">
+        <p><strong>Características</strong><br>Germinación: 4 días, 3.7 unidades<br>Trasplante: 9 días<br>Espaciado de Plantas: 30 cm<br># Plantas (m): 3.33 plantas<br>Cosecha: 40 días<br>Filas: 1 fila</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+
+        <h4>3. Soporte y Atado</h4>
+        <p>Tiempo: Soporte - 48 horas; Atado - 12 horas por 120 metros lineales.<br>
+        Instalar Estacas de Soporte: Colocar estacas cada 2.5 metros de longitud y 2.3 metros de altura para soportar las plantas.<br>
+        Atar Plantas: Cuando las plantas alcancen aproximadamente 20 cm de altura, atarlas a las estacas para protección.</p>
+
+        <h4>4. Limpieza y Poda</h4>
+        <p>Tiempo: Limpieza - 4 horas (mínimo 3 veces a la semana); Poda - según sea necesario.<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.<br>
+        Poda Formativa: Podar cuando el cultivo comience a florecer para crear tres ramas principales para diferentes niveles de cosecha.</p>
+
+        <h4>5. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 2 horas inicialmente, luego 4 horas por 120 metros lineales.<br>
+        Inicio de la Cosecha: Comenzar la cosecha alrededor del día 40 después del trasplante. Inicialmente, toma 2 horas por 120 metros lineales, aumentando a 4 horas a medida que aumenta la producción.</p>
+
+        <h4>6. Actividades Posteriores a la Cosecha</h4>
+        <p>Eliminar Plantas Terminadas: Desenterrar y limpiar las camas, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+
+        <h4>7. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+    </div>
     <hr>
 </div>
-
-
 <div id="lettuce" class="crop">
-    <h3>Lettuce</h3>
-    <img src="Lettuce.jpg" alt="Lettuce">
-    <p><strong>Characteristics</strong><br>Germination: 7 days, 80 units<br>Transplant: 20 days<br>Plant Spacing: 20 cm<br># Plants (m): 5 plants<br>Harvest: 50 days<br>Rows: 2 rows</p>
-    <h4>Transplanting Activities:</h4>
-    <p>Estimated time for 120 linear meters: 5 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-    <h4>Thinning:</h4>
-    <p>Estimated time for 120 linear meters: 2 hours.<br>Thin out seedlings to ensure proper spacing and optimal growth.</p>
-    <h4>Covering:</h4>
-    <p>Estimated time for 120 linear meters: 4 hours.<br>Use row covers to protect young plants from cold weather and pests.</p>
-    <h4>Harvesting:</h4>
-    <p>Estimated start: Approximately 50 days after transplanting.<br>First two weeks: Estimated time for 120 linear meters is 1 hour.<br>Subsequent weeks: Estimated time for 120 linear meters is 3 hours, as production increases.</p>
+    <div data-lang="en">
+        <h3>Lettuce</h3>
+        <img src="Lettuce.jpg" alt="Lettuce">
+        <p><strong>Characteristics</strong><br>Germination: 8 days, 10.8 units<br>Transplant: 25 days<br>Plant Spacing: 25 cm<br># Plants (m): 10 plants<br>Harvest: 38 days<br>Rows: 3 rows</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+
+        <h4>3. Cleaning</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters (minimum 3 times a week).<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.</p>
+
+        <h4>4. Harvest</h4>
+        <p>Time: Approximately 3 hours initially, then 5 hours per 120 linear meters (starting around day 30 post-transplant).<br>
+        Harvest: Initially, harvesting will take about 3 hours per 120 linear meters. As production increases, it will take around 5 hours.</p>
+
+        <h4>5. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+
+        <h4>6. Plant Removal</h4>
+        <p>Time: Approximately 8 hours per 120 linear meters.<br>
+        Remove Finished Plants: Uproot and weed the beds of finished cycles, disinfect, apply microorganisms, and prepare for new transplants.</p>
+
+        <h4>7. Germination Second Stage</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Second Stage Germination.</p>
+    </div>
+    <div data-lang="es">
+        <h3>Lechuga</h3>
+        <img src="Lettuce.jpg" alt="Lechuga">
+        <p><strong>Características</strong><br>Germinación: 8 días, 10.8 unidades<br>Trasplante: 25 días<br>Espaciado de Plantas: 25 cm<br># Plantas (m): 10 plantas<br>Cosecha: 38 días<br>Filas: 3 filas</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+
+        <h4>3. Limpieza</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales (mínimo 3 veces a la semana).<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.</p>
+
+        <h4>4. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 3 horas inicialmente, luego 5 horas por 120 metros lineales (comenzando alrededor del día 30 después del trasplante).<br>
+        Cosecha: Inicialmente, la cosecha tomará aproximadamente 3 horas por 120 metros lineales. A medida que aumenta la producción, tomará alrededor de 5 horas.</p>
+
+        <h4>5. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+
+        <h4>6. Eliminación de Plantas</h4>
+        <p>Tiempo: Aproximadamente 8 horas por 120 metros lineales.<br>
+        Eliminar Plantas Terminadas: Desenterrar y desherbar las camas de ciclos terminados, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+
+        <h4>7. Segunda Etapa de Germinación</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Segunda Etapa de Germinación.</p>
+    </div>
     <hr>
 </div>
 
 <div id="cherry-tomato" class="crop">
-    <h3>Cherry Tomato</h3>
-    <img src="Cherry Tomato.jpg" alt="Cherry Tomato">
-    <p><strong>Characteristics</strong><br>Germination: 7 days, 100 units<br>Transplant: 30 days<br>Plant Spacing: 45 cm<br># Plants (m): 2.22 plants<br>Harvest: 60 days<br>Rows: 1 row</p>
-    <h4>Transplanting Activities:</h4>
-    <p>Estimated time for 120 linear meters: 6 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-    <h4>Staking:</h4>
-    <p>Estimated time for 120 linear meters: 12 hours.<br>Install stakes or cages to support tomato plants as they grow. Stakes should be placed 45 cm apart and reach a height of 1.5 meters.</p>
-    <h4>Pruning:</h4>
-    <p>Regularly prune tomato plants to improve air circulation, reduce disease risk, and focus plant energy on fruit production.</p>
-    <h4>Harvesting:</h4>
-    <p>Estimated start: Approximately 60 days after transplanting.<br>First two weeks: Estimated time for 120 linear meters is 2 hours.<br>Subsequent weeks: Estimated time for 120 linear meters is 4 hours, as production increases.</p>
+    <div data-lang="en">
+        <h3>Cherry Tomato</h3>
+        <img src="Cherry Tomato.jpg" alt="Cherry Tomato">
+        <p><strong>Characteristics</strong><br>Germination: 7 days, 100 units<br>Transplant: 30 days<br>Plant Spacing: 45 cm<br># Plants (m): 2.22 plants<br>Harvest: 60 days<br>Rows: 1 row</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+
+        <h4>3. Staking and Tying</h4>
+        <p>Time: Staking - 48 hours; Tying - 12 hours per 120 linear meters.<br>
+        Install Support Stakes: Place stakes every 2.5 meters in length and 2.3 meters in height to support the plants.<br>
+        Tie Plants: When plants reach about 20 cm in height, tie them to the stakes for protection.</p>
+
+        <h4>4. Cleaning and Pruning</h4>
+        <p>Time: Cleaning - 4 hours (minimum 3 times a week); Pruning - as needed.<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.<br>
+        Formative Pruning: Prune when the crop starts to flower to create three main branches for different harvest levels.</p>
+
+        <h4>5. Harvest</h4>
+        <p>Time: Approximately 2 hours initially, then 4 hours per 120 linear meters.<br>
+        Start of Harvest: Begin harvesting around day 60 after transplanting. Initially, it takes 2 hours per 120 linear meters, increasing to 4 hours as production rises.</p>
+
+        <h4>6. Post-Harvest Activities</h4>
+        <p>Remove Finished Plants: Uproot and clean the beds, disinfect, apply microorganisms, and prepare for new transplants.</p>
+
+        <h4>7. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+    </div>
+    <div data-lang="es">
+        <h3>Tomate Cherry</h3>
+        <img src="Cherry Tomato.jpg" alt="Tomate Cherry">
+        <p><strong>Características</strong><br>Germinación: 7 días, 100 unidades<br>Trasplante: 30 días<br>Espaciado de Plantas: 45 cm<br># Plantas (m): 2.22 plantas<br>Cosecha: 60 días<br>Filas: 1 fila</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+
+        <h4>3. Soporte y Atado</h4>
+        <p>Tiempo: Soporte - 48 horas; Atado - 12 horas por 120 metros lineales.<br>
+        Instalar Estacas de Soporte: Colocar estacas cada 2.5 metros de longitud y 2.3 metros de altura para soportar las plantas.<br>
+        Atar Plantas: Cuando las plantas alcancen aproximadamente 20 cm de altura, atarlas a las estacas para protección.</p>
+
+        <h4>4. Limpieza y Poda</h4>
+        <p>Tiempo: Limpieza - 4 horas (mínimo 3 veces a la semana); Poda - según sea necesario.<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.<br>
+        Poda Formativa: Podar cuando el cultivo comience a florecer para crear tres ramas principales para diferentes niveles de cosecha.</p>
+
+        <h4>5. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 2 horas inicialmente, luego 4 horas por 120 metros lineales.<br>
+        Inicio de la Cosecha: Comenzar la cosecha alrededor del día 60 después del trasplante. Inicialmente, toma 2 horas por 120 metros lineales, aumentando a 4 horas a medida que aumenta la producción.</p>
+
+        <h4>6. Actividades Posteriores a la Cosecha</h4>
+        <p>Eliminar Plantas Terminadas: Desenterrar y limpiar las camas, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+
+        <h4>7. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+    </div>
     <hr>
 </div>
 
-
 <div id="cilantro" class="crop">
-    <h3>Cilantro (Coriander)</h3>
-    <img src="Cilantro.jpg" alt="Cilantro">
-    <p><strong>Characteristics</strong><br>Germination: 7 days, 80 units<br>Transplant: Not applicable<br>Plant Spacing: 15 cm<br># Plants (m): 6.67 plants<br>Harvest: 50 days<br>Rows: 1 row</p>
-    <h4>Sowing:</h4>
-    <p>Sow cilantro seeds directly into well-drained soil, about 0.5 cm deep. Keep soil consistently moist until germination.</p>
-    <h4>Thinning:</h4>
-    <p>Once seedlings are 5-7 cm tall, thin them to 15 cm apart to allow for proper growth and development.</p>
-    <h4>Watering:</h4>
-    <p>Maintain even moisture throughout the growing period to prevent bolting (premature flowering).</p>
-    <h4>Harvesting:</h4>
-    <p>Harvest leaves when they are young and tender, typically around 50 days after sowing. Use sharp scissors to cut leaves just above the soil level.</p>
+    <div data-lang="en">
+        <h3>Cilantro (Coriander)</h3>
+        <img src="Cilantro.jpg" alt="Cilantro">
+        <p><strong>Characteristics</strong><br>Germination: 7 days, 180 units<br>Transplant: 23 days<br>Plant Spacing: 12 cm<br># Plants (m): 3 plants<br>Harvest: 40 days<br>Rows: 6 rows</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+
+        <h4>3. Cleaning</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters (minimum 3 times a week).<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.</p>
+
+        <h4>4. Harvest</h4>
+        <p>Time: Approximately 3 hours initially, then 5 hours per 120 linear meters (starting around day 30 post-transplant).<br>
+        Harvest: Initially, harvesting will take about 3 hours per 120 linear meters. As production increases, it will take around 5 hours.</p>
+
+        <h4>5. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+
+        <h4>6. Plant Removal</h4>
+        <p>Time: Approximately 8 hours per 120 linear meters.<br>
+        Remove Finished Plants: Uproot and weed the beds of finished cycles, disinfect, apply microorganisms, and prepare for new transplants.</p>
+
+        <h4>7. Germination Second Stage</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Second Stage Germination.</p>
+    </div>
+    <div data-lang="es">
+        <h3>Cilantro</h3>
+        <img src="Cilantro.jpg" alt="Cilantro">
+        <p><strong>Características</strong><br>Germinación: 7 días, 180 unidades<br>Trasplante: 23 días<br>Espaciado de Plantas: 12 cm<br># Plantas (m): 3 plantas<br>Cosecha: 40 días<br>Filas: 6 filas</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+
+        <h4>3. Limpieza</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales (mínimo 3 veces a la semana).<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.</p>
+
+        <h4>4. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 3 horas inicialmente, luego 5 horas por 120 metros lineales (comenzando alrededor del día 30 después del trasplante).<br>
+        Cosecha: Inicialmente, la cosecha tomará aproximadamente 3 horas por 120 metros lineales. A medida que aumenta la producción, tomará alrededor de 5 horas.</p>
+
+        <h4>5. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+
+        <h4>6. Eliminación de Plantas</h4>
+        <p>Tiempo: Aproximadamente 8 horas por 120 metros lineales.<br>
+        Eliminar Plantas Terminadas: Desenterrar y desherbar las camas de ciclos terminados, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+
+        <h4>7. Segunda Etapa de Germinación</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Segunda Etapa de Germinación.</p>
+    </div>
     <hr>
 </div>
 
 <div id="kabocha-squash" class="crop">
-    <h3>Kabocha Squash</h3>
-    <img src="Kabocha Squash.jpg" alt="Kabocha Squash">
-    <p><strong>Characteristics</strong><br>Germination: 7 days, 100 units<br>Transplant: 20 days<br>Plant Spacing: 50 cm<br># Plants (m): 2 plants<br>Harvest: 80 days<br>Rows: 2 rows</p>
-    <h4>Transplanting Activities:</h4>
-    <p>Estimated time for 120 linear meters: 4 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-    <h4>Harvesting:</h4>
-    <p>Estimated start: Approximately 30 days after transplanting.<br>First two weeks: Estimated time for 120 linear meters is 3 hours.<br>Subsequent weeks: Estimated time for 120 linear meters is 5 hours.</p>
+    <div data-lang="en">
+        <h3>Kabocha Squash</h3>
+        <img src="Kabocha Squash.jpg" alt="Kabocha Squash">
+        <p><strong>Characteristics</strong><br>Germination: 7 days, 100 units<br>Transplant: 20 days<br>Plant Spacing: 50 cm<br># Plants (m): 2 plants<br>Harvest: 30 days<br>Rows: 2 rows</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+
+        <h4>3. Cleaning</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters (minimum 3 times a week).<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.</p>
+
+        <h4>4. Harvest</h4>
+        <p>Time: Approximately 3 hours initially, then 5 hours per 120 linear meters (starting around day 30 post-transplant).<br>
+        Harvest: Initially, harvesting will take about 3 hours per 120 linear meters. As production increases, it will take around 5 hours.</p>
+
+        <h4>5. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+
+        <h4>6. Plant Removal</h4>
+        <p>Time: Approximately 8 hours per 120 linear meters.<br>
+        Remove Finished Plants: Uproot and weed the beds of finished cycles, disinfect, apply microorganisms, and prepare for new transplants.</p>
+
+        <h4>7. Germination Second Stage</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Second Stage Germination.</p>
+    </div>
+    <div data-lang="es">
+        <h3>Ayote Kabocha</h3>
+        <img src="Kabocha Squash.jpg" alt="Ayote Kabocha">
+        <p><strong>Características</strong><br>Germinación: 7 días, 100 unidades<br>Trasplante: 20 días<br>Espaciado de Plantas: 50 cm<br># Plantas (m): 2 plantas<br>Cosecha: 30 días<br>Filas: 2 filas</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+
+        <h4>3. Limpieza</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales (mínimo 3 veces a la semana).<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.</p>
+
+        <h4>4. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 3 horas inicialmente, luego 5 horas por 120 metros lineales (comenzando alrededor del día 30 después del trasplante).<br>
+        Cosecha: Inicialmente, la cosecha tomará aproximadamente 3 horas por 120 metros lineales. A medida que aumenta la producción, tomará alrededor de 5 horas.</p>
+
+        <h4>5. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+
+        <h4>6. Eliminación de Plantas</h4>
+        <p>Tiempo: Aproximadamente 8 horas por 120 metros lineales.<br>
+        Eliminar Plantas Terminadas: Desenterrar y desherbar las camas de ciclos terminados, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+
+        <h4>7. Segunda Etapa de Germinación</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Segunda Etapa de Germinación.</p>
+    </div>
     <hr>
 </div>
+<div id="butter-squash" class="crop">
+    <div data-lang="en">
+        <h3>Butternut Squash</h3>
+        <img src="Butter Squash.jpg" alt="Butternut Squash">
+        <p><strong>Characteristics</strong><br>Germination: 7 days, 100 units<br>Transplant: 20 days<br>Plant Spacing: 50 cm<br># Plants (m): 2 plants<br>Harvest: 30 days<br>Rows: 2 rows</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
 
-<div id="butternut-squash" class="crop">
-    <h3>Butternut Squash</h3>
-    <img src="Butter Squash.jpg" alt="Butter Squash">
-    <p><strong>Characteristics</strong><br>Germination: 4 days, 3.7 units<br>Transplant: 8 days<br>Plant Spacing: 30 cm<br># Plants (m): 3.33 plants<br>Harvest: 40 days<br>Rows: 1 row</p>
-    <h4>Transplanting Activities:</h4>
-    <p>Estimated time for 120 linear meters: 4 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-    <h4>Harvesting:</h4>
-    <p>Estimated start: Approximately 30 days after transplanting.<br>First two weeks: Estimated time for 120 linear meters is 3 hours.<br>Subsequent weeks: Estimated time for 120 linear meters is 5 hours.</p>
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+
+        <h4>3. Cleaning</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters (minimum 3 times a week).<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.</p>
+
+        <h4>4. Harvest</h4>
+        <p>Time: Approximately 3 hours initially, then 5 hours per 120 linear meters (starting around day 30 post-transplant).<br>
+        Harvest: Initially, harvesting will take about 3 hours per 120 linear meters. As production increases, it will take around 5 hours.</p>
+
+        <h4>5. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+
+        <h4>6. Plant Removal</h4>
+        <p>Time: Approximately 8 hours per 120 linear meters.<br>
+        Remove Finished Plants: Uproot and weed the beds of finished cycles, disinfect, apply microorganisms, and prepare for new transplants.</p>
+
+        <h4>7. Germination Second Stage</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Second Stage Germination.</p>
+    </div>
+    <div data-lang="es">
+        <h3>Ayote Mantequilla</h3>
+        <img src="Butter Squash.jpg" alt="Ayote Mantequilla">
+        <p><strong>Características</strong><br>Germinación: 7 días, 100 unidades<br>Trasplante: 20 días<br>Espaciado de Plantas: 50 cm<br># Plantas (m): 2 plantas<br>Cosecha: 30 días<br>Filas: 2 filas</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+
+        <h4>3. Limpieza</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales (mínimo 3 veces a la semana).<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.</p>
+
+        <h4>4. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 3 horas inicialmente, luego 5 horas por 120 metros lineales (comenzando alrededor del día 30 después del trasplante).<br>
+        Cosecha: Inicialmente, la cosecha tomará aproximadamente 3 horas por 120 metros lineales. A medida que aumenta la producción, tomará alrededor de 5 horas.</p>
+
+        <h4>5. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+
+        <h4>6. Eliminación de Plantas</h4>
+        <p>Tiempo: Aproximadamente 8 horas por 120 metros lineales.<br>
+        Eliminar Plantas Terminadas: Desenterrar y desherbar las camas de ciclos terminados, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+
+        <h4>7. Segunda Etapa de Germinación</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Segunda Etapa de Germinación.</p>
+    </div>
     <hr>
 </div>
 
 <div id="radish" class="crop">
-    <h3>Radish</h3>
-    <img src="Radish.jpg" alt="Radish">
-    <p><strong>Characteristics</strong><br>Germination: 5 days, 2.5 units<br>Transplant: Direct sow<br>Plant Spacing: 5 cm<br># Plants (m): 20 plants<br>Harvest: 25 days<br>Rows: 1 row</p>
-    <h4>Transplanting Activities:</h4>
-    <p>Estimated time for 120 linear meters: 6 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-    <h4>Harvesting:</h4>
-    <p>Estimated start: Approximately 30 days after transplanting.<br>First two weeks: Estimated time for 120 linear meters is 3 hours.<br>Subsequent weeks: Estimated time for 120 linear meters is 5 hours.</p>
+    <div data-lang="en">
+        <h3>Radish</h3>
+        <img src="Radish.jpg" alt="Radish">
+        <p><strong>Characteristics</strong><br>Germination: 4 days, 120 units<br>Transplant: 15 days<br>Plant Spacing: 12 cm<br># Plants (m): 50 plants<br>Harvest: 35 days<br>Rows: 6 rows</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+
+        <h4>3. Cleaning</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters (minimum 3 times a week).<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.</p>
+
+        <h4>4. Harvest</h4>
+        <p>Time: Approximately 3 hours initially, then 5 hours per 120 linear meters (starting around day 30 post-transplant).<br>
+        Harvest: Initially, harvesting will take about 3 hours per 120 linear meters. As production increases, it will take around 5 hours.</p>
+
+        <h4>5. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+
+        <h4>6. Plant Removal</h4>
+        <p>Time: Approximately 8 hours per 120 linear meters.<br>
+        Remove Finished Plants: Uproot and weed the beds of finished cycles, disinfect, apply microorganisms, and prepare for new transplants.</p>
+
+        <h4>7. Germination Second Stage</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Second Stage Germination.</p>
+    </div>
+    <div data-lang="es">
+        <h3>Rabanito</h3>
+        <img src="Radish.jpg" alt="Rabanito">
+        <p><strong>Características</strong><br>Germinación: 4 días, 120 unidades<br>Trasplante: 15 días<br>Espaciado de Plantas: 12 cm<br># Plantas (m): 50 plantas<br>Cosecha: 35 días<br>Filas: 6 filas</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+
+        <h4>3. Limpieza</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales (mínimo 3 veces a la semana).<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.</p>
+
+        <h4>4. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 3 horas inicialmente, luego 5 horas por 120 metros lineales (comenzando alrededor del día 30 después del trasplante).<br>
+        Cosecha: Inicialmente, la cosecha tomará aproximadamente 3 horas por 120 metros lineales. A medida que aumenta la producción, tomará alrededor de 5 horas.</p>
+
+        <h4>5. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+
+        <h4>6. Eliminación de Plantas</h4>
+        <p>Tiempo: Aproximadamente 8 horas por 120 metros lineales.<br>
+        Eliminar Plantas Terminadas: Desenterrar y desherbar las camas de ciclos terminados, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+
+        <h4>7. Segunda Etapa de Germinación</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Segunda Etapa de Germinación.</p>
+    </div>
     <hr>
 </div>
 
 <div id="zucchini" class="crop">
-    <h3>Zucchini</h3>
-    <img src="Zucchini.jpg" alt="Zucchini">
-    <p><strong>Characteristics</strong><br>Germination: 4 days, 3.7 units<br>Transplant: 8 days<br>Plant Spacing: 30 cm<br># Plants (m): 3.33 plants<br>Harvest: 40 days<br>Rows: 1 row</p>
-    <h4>Transplanting Activities:</h4>
-    <p>Estimated time for 120 linear meters: 4 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-    <h4>Harvesting:</h4>
-    <p>Estimated start: Approximately 30 days after transplanting.<br>First two weeks: Estimated time for 120 linear meters is 3 hours.<br>Subsequent weeks: Estimated time for 120 linear meters is 5 hours.</p>
+    <div data-lang="en">
+        <h3>Zucchini</h3>
+        <img src="Zucchini.jpg" alt="Zucchini">
+        <p><strong>Characteristics</strong><br>Germination: 4 days, 3.7 units<br>Transplant: 8 days<br>Plant Spacing: 30 cm<br># Plants (m): 3.33 plants<br>Harvest: 40 days<br>Rows: 1 row</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+
+        <h4>3. Cleaning</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters (minimum 3 times a week).<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.</p>
+
+        <h4>4. Harvest</h4>
+        <p>Time: Approximately 3 hours initially, then 5 hours per 120 linear meters (starting around day 40 post-transplant).<br>
+        Harvest: Initially, harvesting will take about 3 hours per 120 linear meters. As production increases, it will take around 5 hours.</p>
+
+        <h4>5. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+
+        <h4>6. Plant Removal</h4>
+        <p>Time: Approximately 8 hours per 120 linear meters.<br>
+        Remove Finished Plants: Uproot and weed the beds of finished cycles, disinfect, apply microorganisms, and prepare for new transplants.</p>
+
+        <h4>7. Germination Second Stage</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Second Stage Germination.</p>
+    </div>
+    <div data-lang="es">
+        <h3>Zuquinni</h3>
+        <img src="Zucchini.jpg" alt="Zuquinni">
+        <p><strong>Características</strong><br>Germinación: 4 días, 3.7 unidades<br>Trasplante: 8 días<br>Espaciado de Plantas: 30 cm<br># Plantas (m): 3.33 plantas<br>Cosecha: 40 días<br>Filas: 1 fila</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+
+        <h4>3. Limpieza</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales (mínimo 3 veces a la semana).<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.</p>
+
+        <h4>4. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 3 horas inicialmente, luego 5 horas por 120 metros lineales (comenzando alrededor del día 40 después del trasplante).<br>
+        Cosecha: Inicialmente, la cosecha tomará aproximadamente 3 horas por 120 metros lineales. A medida que aumenta la producción, tomará alrededor de 5 horas.</p>
+
+        <h4>5. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+
+        <h4>6. Eliminación de Plantas</h4>
+        <p>Tiempo: Aproximadamente 8 horas por 120 metros lineales.<br>
+        Eliminar Plantas Terminadas: Desenterrar y desherbar las camas de ciclos terminados, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+
+        <h4>7. Segunda Etapa de Germinación</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Segunda Etapa de Germinación.</p>
+    </div>
     <hr>
 </div>
-
 
 <div id="green-bean" class="crop">
-    <h3>Green Bean</h3>
-    <img src="Green Bean.jpg" alt="Green Bean">
-    <p><strong>Characteristics</strong><br>Germination: 4 days, 7.5 units<br>Transplant: 12 days<br>Plant Spacing: 30 cm x 2 rows<br># Plants (m): 6.66 plants<br>Harvest: 65 days<br>Rows: 1 row</p>
-    <h4>Transplanting Activities:</h4>
-    <p>Estimated time for 120 linear meters: 4 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-    <h4>Staking:</h4>
-    <p>Estimated time for 120 linear meters: 48 hours.<br>Stakes are the bases where the ropes that will support the plants are tied to prevent breakage from wind, weight, rain, etc. They should be 2.5 meters apart and 2.30 meters high.</p>
-    <h4>Tying:</h4>
-    <p>Estimated time for 120 linear meters: 12 hours.<br>When plants reach approximately 20 centimeters, they should be tied for protection, avoiding damage and losses.</p>
-    <h4>Harvesting:</h4>
-    <p>Estimated start: Approximately 30 days after transplanting.<br>First two weeks: Estimated time for 120 linear meters is 3 hours.<br>Subsequent weeks: Estimated time for 120 linear meters is 5 hours.</p>
+    <div data-lang="en">
+        <h3>Green Bean</h3>
+        <img src="Green Bean.jpg" alt="Green Bean">
+        <p><strong>Characteristics</strong><br>Germination: 4 days, 7.5 units<br>Transplant: 12 days<br>Plant Spacing: 30 cm x 2 rows<br># Plants (m): 6.66 plants<br>Harvest: 65 days<br>Rows: 1 row</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+
+        <h4>3. Cleaning</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters (minimum 3 times a week).<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.</p>
+
+        <h4>4. Harvest</h4>
+        <p>Time: Approximately 3 hours initially, then 5 hours per 120 linear meters (starting around day 65 post-transplant).<br>
+        Harvest: Initially, harvesting will take about 3 hours per 120 linear meters. As production increases, it will take around 5 hours.</p>
+
+        <h4>5. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+
+        <h4>6. Plant Removal</h4>
+        <p>Time: Approximately 8 hours per 120 linear meters.<br>
+        Remove Finished Plants: Uproot and weed the beds of finished cycles, disinfect, apply microorganisms, and prepare for new transplants.</p>
+
+        <h4>7. Germination Second Stage</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Second Stage Germination.</p>
+    </div>
+    <div data-lang="es">
+        <h3>Vainica</h3>
+        <img src="Green Bean.jpg" alt="Vainica">
+        <p><strong>Características</strong><br>Germinación: 4 días, 7.5 unidades<br>Trasplante: 12 días<br>Espaciado de Plantas: 30 cm x 2 filas<br># Plantas (m): 6.66 plantas<br>Cosecha: 65 días<br>Filas: 1 fila</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+
+        <h4>3. Limpieza</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales (mínimo 3 veces a la semana).<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.</p>
+
+        <h4>4. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 3 horas inicialmente, luego 5 horas por 120 metros lineales (comenzando alrededor del día 65 después del trasplante).<br>
+        Cosecha: Inicialmente, la cosecha tomará aproximadamente 3 horas por 120 metros lineales. A medida que aumenta la producción, tomará alrededor de 5 horas.</p>
+
+        <h4>5. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+
+        <h4>6. Eliminación de Plantas</h4>
+        <p>Tiempo: Aproximadamente 8 horas por 120 metros lineales.<br>
+        Eliminar Plantas Terminadas: Desenterrar y desherbar las camas de ciclos terminados, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+
+        <h4>7. Segunda Etapa de Germinación</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Segunda Etapa de Germinación.</p>
+    </div>
     <hr>
 </div>
-
 
 <div id="jalapenos" class="crop">
-    <h3>Jalapeños</h3>
-    <img src="Jalapenos.jpg" alt="Jalapenos">
-    <p><strong>Characteristics</strong><br>Germination: 8 days, 7.4 units<br>Transplant: 25 days<br>Plant Spacing: 30 cm<br># Plants (m): 6.66 plants<br>Harvest: 70 days<br>Rows: 2 rows</p>
-    <h4>Transplanting Activities:</h4>
-    <p>Estimated time for 120 linear meters: 4 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-    <h4>Staking:</h4>
-    <p>Estimated time for 120 linear meters: 48 hours.<br>Stakes are the bases where the ropes that will support the plants are tied to prevent breakage from wind, weight, rain, etc. They should be 2.5 meters apart and 2.30 meters high.</p>
-    <h4>Tying:</h4>
-    <p>Estimated time for 120 linear meters: 12 hours.<br>When plants reach approximately 20 centimeters, they should be tied for protection, avoiding damage and losses.</p>
-    <h4>Pruning:</h4>
-    <p>When the crop starts to flower, formative pruning should be done, starting to induce 3 axes to achieve different levels at harvest time.</p>
-    <h4>Harvesting:</h4>
-    <p>Estimated start: Approximately 70 days after transplanting.<br>First two weeks: Estimated time for 120 linear meters is 2 hours.<br>Subsequent weeks: Estimated time for 120 linear meters is 4 hours, as production increases.</p>
+    <div data-lang="en">
+        <h3>Jalapeños</h3>
+        <img src="Jalapenos.jpg" alt="Jalapeños">
+        <p><strong>Characteristics</strong><br>Germination: 8 days, 7.4 units<br>Transplant: 25 days<br>Plant Spacing: 30 cm<br># Plants (m): 6.66 plants<br>Harvest: 70 days<br>Rows: 2 rows</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+
+        <h4>3. Staking and Tying</h4>
+        <p>Time: Staking - 48 hours; Tying - 12 hours per 120 linear meters.<br>
+        Install Support Stakes: Place stakes every 2.5 meters in length and 2.3 meters in height to support the plants.<br>
+        Tie Plants: When plants reach about 20 cm in height, tie them to the stakes for protection.</p>
+
+        <h4>4. Cleaning and Pruning</h4>
+        <p>Time: Cleaning - 4 hours (minimum 3 times a week); Pruning - as needed.<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.<br>
+        Formative Pruning: Prune when the crop starts to flower to create three main branches for different harvest levels.</p>
+
+        <h4>5. Harvest</h4>
+        <p>Time: Approximately 2 hours initially, then 4 hours per 120 linear meters (starting around day 70 post-transplant).<br>
+        Harvest: Initially, harvesting will take about 2 hours per 120 linear meters. As production increases, it will take around 4 hours.</p>
+
+        <h4>6. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+
+        <h4>7. Plant Removal</h4>
+        <p>Time: Approximately 8 hours per 120 linear meters.<br>
+        Remove Finished Plants: Uproot and weed the beds of finished cycles, disinfect, apply microorganisms, and prepare for new transplants.</p>
+
+        <h4>8. Germination Second Stage</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Second Stage Germination.</p>
+    </div>
+    <div data-lang="es">
+        <h3>Jalapeños</h3>
+        <img src="Jalapenos.jpg" alt="Jalapeños">
+        <p><strong>Características</strong><br>Germinación: 8 días, 7.4 unidades<br>Trasplante: 25 días<br>Espaciado de Plantas: 30 cm<br># Plantas (m): 6.66 plantas<br>Cosecha: 70 días<br>Filas: 2 filas</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+
+        <h4>3. Estacas y Sujeción</h4>
+        <p>Tiempo: Estacas - 48 horas; Sujeción - 12 horas por 120 metros lineales.<br>
+        Instalar Estacas de Soporte: Colocar estacas cada 2.5 metros de longitud y 2.3 metros de altura para soportar las plantas.<br>
+        Sujetar Plantas: Cuando las plantas alcancen aproximadamente 20 cm de altura, sujetarlas a las estacas para protección.</p>
+
+        <h4>4. Limpieza y Poda</h4>
+        <p>Tiempo: Limpieza - 4 horas (mínimo 3 veces a la semana); Poda - según sea necesario.<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.<br>
+        Poda Formativa: Podar cuando el cultivo comience a florecer para crear tres ramas principales para diferentes niveles de cosecha.</p>
+
+        <h4>5. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 2 horas inicialmente, luego 4 horas por 120 metros lineales (comenzando alrededor del día 70 después del trasplante).<br>
+        Cosecha: Inicialmente, la cosecha tomará aproximadamente 2 horas por 120 metros lineales. A medida que aumenta la producción, tomará alrededor de 4 horas.</p>
+
+        <h4>6. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+
+        <h4>7. Eliminación de Plantas</h4>
+        <p>Tiempo: Aproximadamente 8 horas por 120 metros lineales.<br>
+        Eliminar Plantas Terminadas: Desenterrar y desherbar las camas de ciclos terminados, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+
+        <h4>8. Segunda Etapa de Germinación</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Segunda Etapa de Germinación.</p>
+    </div>
     <hr>
 </div>
-
 
 <div id="cabbage" class="crop">
-    <h3>Cabbage</h3>
-    <img src="Cabbage.jpg" alt="Cabbage">
-    <p><strong>Characteristics</strong><br>Germination: 6 days, 90 units<br>Transplant: 30 days<br>Plant Spacing: 40 cm<br># Plants (m): 2.5 plants<br>Harvest: 100 days<br>Rows: 2 rows</p>
-    <h4>Transplanting Activities:</h4>
-    <p>Estimated time for 120 linear meters: 10 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-    <h4>Staking:</h4>
-    <p>Estimated time for 120 linear meters: 24 hours.<br>Stakes should be placed to support the plants as they grow, ensuring they remain upright and protected.</p>
-    <h4>Harvesting:</h4>
-    <p>Estimated start: Approximately 100 days after transplanting.<br>First two weeks: Estimated time for 120 linear meters is 4 hours.<br>Subsequent weeks: Estimated time for 120 linear meters is 6 hours, as production increases.</p>
+    <div data-lang="en">
+        <h3>Cabbage</h3>
+        <img src="Cabbage.jpg" alt="Cabbage">
+        <p><strong>Characteristics</strong><br>Germination: 8 days, 10.8 units<br>Transplant: 25 days<br>Plant Spacing: 35 cm<br># Plants (m): 10 plants<br>Harvest: 65 days<br>Rows: 3 rows</p>
+        <h4>1. Transplant Activities</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Check Drip Tape Alignment: Ensure proper alignment for plant protection and efficient irrigation.<br>
+        Check Soil Moisture: Verify that the soil moisture is adequate for transplanting.<br>
+        Preparation Before Transplanting: Add organic fertilizer and humic acids to each planting hole.<br>
+        Transplanting: Create holes that fit the seedlings properly, cover without compressing the stem, and water for 1 hour after transplanting.</p>
+
+        <h4>2. Fertilization</h4>
+        <p>Time: Approximately 6 hours per 120 linear meters.<br>
+        Initial Fertilization: Fertilize 5 days after transplanting, then weekly throughout the crop's life.</p>
+
+        <h4>3. Cleaning</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters (minimum 3 times a week).<br>
+        Regular Cleaning: Weed the plants and clean the beds and pathways to prevent diseases and pests.</p>
+
+        <h4>4. Harvest</h4>
+        <p>Time: Approximately 3 hours initially, then 5 hours per 120 linear meters (starting around day 65 post-transplant).<br>
+        Harvest: Initially, harvesting will take about 3 hours per 120 linear meters. As production increases, it will take around 5 hours.</p>
+
+        <h4>5. Reporting</h4>
+        <p>Start of Harvest Report: Report the beginning of the harvest (5 minutes).<br>
+        Weekly Harvest Report: Report the kilograms harvested (30 minutes).<br>
+        End of Harvest Report: Report the end of the harvest (5 minutes).</p>
+
+        <h4>6. Plant Removal</h4>
+        <p>Time: Approximately 8 hours per 120 linear meters.<br>
+        Remove Finished Plants: Uproot and weed the beds of finished cycles, disinfect, apply microorganisms, and prepare for new transplants.</p>
+
+        <h4>7. Germination Second Stage</h4>
+        <p>Time: Approximately 4 hours per 120 linear meters.<br>
+        Second Stage Germination.</p>
+    </div>
+    <div data-lang="es">
+        <h3>Repollo</h3>
+        <img src="Cabbage.jpg" alt="Repollo">
+        <p><strong>Características</strong><br>Germinación: 8 días, 10.8 unidades<br>Trasplante: 25 días<br>Espaciado de Plantas: 35 cm<br># Plantas (m): 10 plantas<br>Cosecha: 65 días<br>Filas: 3 filas</p>
+        <h4>1. Actividades de Trasplante</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Verificación de Alineación de Cinta de Goteo: Asegúrese de la alineación adecuada para la protección de las plantas y un riego eficiente.<br>
+        Verificación de Humedad del Suelo: Verifique que la humedad del suelo sea adecuada para el trasplante.<br>
+        Preparación Antes del Trasplante: Agregar fertilizante orgánico y ácidos húmicos a cada agujero de siembra.<br>
+        Trasplante: Crear agujeros que se ajusten adecuadamente a las plántulas, cubrir sin comprimir el tallo y regar durante 1 hora después del trasplante.</p>
+
+        <h4>2. Fertilización</h4>
+        <p>Tiempo: Aproximadamente 6 horas por 120 metros lineales.<br>
+        Fertilización Inicial: Fertilizar 5 días después del trasplante, luego semanalmente durante la vida del cultivo.</p>
+
+        <h4>3. Limpieza</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales (mínimo 3 veces a la semana).<br>
+        Limpieza Regular: Desherbar las plantas y limpiar las camas y caminos para prevenir enfermedades y plagas.</p>
+
+        <h4>4. Cosecha</h4>
+        <p>Tiempo: Aproximadamente 3 horas inicialmente, luego 5 horas por 120 metros lineales (comenzando alrededor del día 65 después del trasplante).<br>
+        Cosecha: Inicialmente, la cosecha tomará aproximadamente 3 horas por 120 metros lineales. A medida que aumenta la producción, tomará alrededor de 5 horas.</p>
+
+        <h4>5. Reportes</h4>
+        <p>Reporte de Inicio de Cosecha: Reportar el inicio de la cosecha (5 minutos).<br>
+        Reporte Semanal de Cosecha: Reportar los kilogramos cosechados (30 minutos).<br>
+        Reporte de Fin de Cosecha: Reportar el fin de la cosecha (5 minutos).</p>
+
+        <h4>6. Eliminación de Plantas</h4>
+        <p>Tiempo: Aproximadamente 8 horas por 120 metros lineales.<br>
+        Eliminar Plantas Terminadas: Desenterrar y desherbar las camas de ciclos terminados, desinfectar, aplicar microorganismos y preparar para nuevos trasplantes.</p>
+
+        <h4>7. Segunda Etapa de Germinación</h4>
+        <p>Tiempo: Aproximadamente 4 horas por 120 metros lineales.<br>
+        Segunda Etapa de Germinación.</p>
+    </div>
     <hr>
 </div>
-
-  
-<div id="aromatics" class="crop">
-    <h3>Herbs</h3>
-    <img src="Aromatics.jpg" alt="Herbs">
-    <p><strong>Characteristics</strong><br>Germination and transplant information specific to each aromatic plant will be provided.</p>
-    <h4>Transplanting Activities:</h4>
-    <p>Estimated time for 120 linear meters: 6 hours.<br>Check drip tape alignment for plant protection and irrigation efficiency.<br>Moisture review to ensure adequate field capacity (soil moisture).<br>Preparation before transplanting: Each hole where the seedling will be placed should have organic fertilizer and humic acids.<br>Transplant: Make the hole the appropriate size to fit the seedling and cover without pressing the stem.<br>Watering after transplanting (1 hour).</p>
-    <hr>
+</div>
+</div>
 </div>
 
 
-
-  </div>
+    </div>
     <footer>
-        <p>&copy; 2024 Creciendo Juntos</p>
+        <p>&copy; 2024 Creciendo Juntos Libro de texto en línea - Agricultura</p>
         <img src="image.png" alt="Creciendo Juntos Logo">
     </footer>
 </body>

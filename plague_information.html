@@ -17,6 +17,7 @@
             color: white;
             padding: 20px 0;
             text-align: center;
+            position: relative;
         }
         nav {
             background-color: #3e8e41;
@@ -68,6 +69,41 @@
             font-weight: bold;
             margin-top: 10px;
         }
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        footer {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+        footer img {
+            width: 200px;
+            margin-top: 10px;
+        }
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .language-toggle button {
+            background-color: #3e8e41;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        .language-toggle button:hover {
+            background-color: #45a049;
+        }
+.pest-title {
+            font-weight: bold;
+            margin-top: 10px;
+        }
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -107,29 +143,48 @@
             margin-top: 10px;
         }
     </style>
+    <script>
+    function switchLanguage(lang) {
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+        });
+        document.documentElement.lang = lang; 
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        switchLanguage('es'); // Default language set to Spanish
+    });
+</script>
+
+
 </head>
 <body>
     <header>
-        <h1>Creciendo Juntos Farming Online Textbook</h1>
+        <h1>Creciendo Juntos Libro de texto en línea - Agricultura</h1>
+        <div class="language-toggle">
+            <button onclick="switchLanguage('en');">English</button>
+            <button onclick="switchLanguage('es');">Español</button>
+        </div>
     </header>
     <nav>
-        <a href="index.html">Homepage</a>
-        <a href="crop_information.html">Crop Information</a>
-        <a href="plague_information.html">Plague Information</a>
+        <a href="index.html" onclick="switchLanguage('es');">Inicio</a>
+        <a href="crop_information.html" onclick="switchLanguage('es');">Información sobre Cultivos</a>
+        <a href="plague_information.html" onclick="switchLanguage('es');">Información sobre Plagas</a>
     </nav>
-    <div class="content">
+
+<div class="content">
+    <div data-lang="en">
         <h2>Plague Information</h2>
         <p style="text-align: center;">Information on common plagues that affect crops and strategies for managing and preventing them.</p>
         
         <div class="toc">
             <div class="toc-title">Table of Contents</div>
-            <a href="#diseases">Diseases (Enfermedades)</a>
-            <a href="#pests">Pests (Plagas)</a>
+            <a href="#diseases">Diseases</a>
+            <a href="#pests">Pests</a>
             <a href="#photo-gallery">Photo Gallery</a>
         </div>
         
         <div id="diseases">
-            <div class="section-title">Diseases (Enfermedades)</div>
+            <div class="section-title">Diseases</div>
             <div class="pest-title">Damping Off</div>
             <p>Affects seedlings of all crops, could appear at any time. <br><strong>Crops Affected:</strong> All</p>
             <hr>
@@ -150,11 +205,11 @@
             <p>Could appear at any time. <br><strong>Crops Affected:</strong> Cucumber, zucchini, kabocha squash, buttercup squash</p>
             <hr>
             
-            <div class="pest-title">Downy Mildew (Mildiu velloso)</div>
+            <div class="pest-title">Downy Mildew</div>
             <p>Could appear at any time. <br><strong>Crops Affected:</strong> Cucumber, zucchini, kabocha squash, buttercup squash</p>
             <hr>
             
-            <div class="pest-title">Powdery Mildew (Mildiu polvoso)</div>
+            <div class="pest-title">Powdery Mildew</div>
             <p>Could appear at any time. <br><strong>Crops Affected:</strong> Tomato, cherry tomato, cucumber, zucchini, kabocha squash, buttercup squash</p>
             <hr>
             
@@ -166,7 +221,7 @@
             <p>Could appear at any time. <br><strong>Crops Affected:</strong> Onion, chili, jalapeño, tomato, cherry tomato</p>
             <hr>
             
-            <div class="pest-title">Anthracnose (Antracnosis)</div>
+            <div class="pest-title">Anthracnose</div>
             <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
             <hr>
             
@@ -178,181 +233,422 @@
             <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
             <hr>
         </div>
+    </div>
+    
+    <div data-lang="es" style="display:none;">
+        <h2>Información sobre Plagas</h2>
+        <p style="text-align: center;">Información sobre plagas comunes que afectan los cultivos y estrategias para gestionarlas y prevenirlas.</p>
         
-        <div id="pests">
-            <div class="section-title">Pests (Plagas)</div>
-            <div class="pest-title">Root Cutters (Wireworm, Cortadores de raíz)</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
-            <hr>
-            
-            <div class="pest-title">Blissus</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
-            <hr>
-            
-            <div class="pest-title">Symphylans (Sinfilidos)</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
-            <hr>
-            
-            <div class="pest-title">Aphids (Pulgones o áfidos)</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> Cucumber, chili, jalapeño, tomato, cherry tomato, lettuce</p>
-            <hr>
-            
-            <div class="pest-title">Red Spider Mite (Araña Roja)</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
-            <hr>
-            
-            <div class="pest-title">Whitefly (Mosca Blanca)</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
-            <hr>
-            
-            <div class="pest-title">Nematodes (Nematodos)</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
-            <hr>
-            
-            <div class="pest-title">Leaf Miners (Minadores)</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
-            <hr>
-            
-            <div class="pest-title">Thrips (Trips)</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
-            <hr>
-            
-            <div class="pest-title">Spodoptera</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> Cucumber, chili, jalapeño, tomato, cherry tomato, lettuce</p>
-            <hr>
-            
-            <div class="pest-title">Diaphania Hyalinata</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> Cucumber, zucchini, kabocha squash, buttercup squash</p>
-            <hr>
-            
-            <div class="pest-title">Diaphania Nitidalis</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> Cucumber, zucchini, kabocha squash, buttercup squash</p>
-            <hr>
-            
-            <div class="pest-title">Manduca</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> Chili, jalapeño, tomato, cherry tomato</p>
-            <hr>
-            
-            <div class="pest-title">Cabbage Looper (Larva del repollo)</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> Cabbage</p>
-            <hr>
-            
-            <div class="pest-title">Scales (Escamas)</div>
-            <p>Could appear at any time. <br><strong>Crops Affected:</strong> Aromatic plants</p>
-            <hr>
+        <div class="toc">
+            <div class="toc-title">Tabla de Contenidos</div>
+            <a href="#diseases">Enfermedades</a>
+            <a href="#pests">Plagas</a>
+            <a href="#photo-gallery">Galería de Fotos</a>
         </div>
         
-        <div id="photo-gallery">
-    <div class="section-title">Photo Gallery</div>
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="pest1.jpg" alt="Damping Off">
-            <strong class="gallery-title">Damping Off</strong>
+        <div id="diseases">
+            <div class="section-title">Enfermedades</div>
+            <div class="pest-title">Marchitamiento</div>
+            <p>Afecta a plántulas de todos los cultivos, puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+            <hr>
+            
+            <div class="pest-title">Alternaria</div>
+            <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Chile, jalapeño, tomate, tomate cherry</p>
+            <hr>
+            
+            <div class="pest-title">Esclerotium</div>
+            <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Tomate, tomate cherry, chile, jalapeño</p>
+            <hr>
+            
+            <div class="pest-title">Fusarium</div>
+            <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+            <hr>
+            
+            <div class="pest-title">Mycosphaerella</div>
+            <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Pepino, calabacín, calabaza kabocha, calabaza buttercup</p>
+            <hr>
+            
+            <div class="pest-title">Mildiu velloso</div>
+            <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Pepino, calabacín, calabaza kabocha, calabaza buttercup</p>
+            <hr>
+            
+            <div class="pest-title">Mildiu polvoso</div>
+            <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Tomate, tomate cherry, pepino, calabacín, calabaza kabocha, calabaza buttercup</p>
+            <hr>
+            
+            <div class="pest-title">Erwinia</div>
+            <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+            <hr>
+            
+            <div class="pest-title">Xanthomonas</div>
+            <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Cebolla, chile, jalapeño, tomate, tomate cherry</p>
+            <hr>
+            
+            <div class="pest-title">Antracnosis</div>
+            <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+            <hr>
+            
+            <div class="pest-title">Phytophthora</div>
+            <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Chile, jalapeño, tomate, tomate cherry</p>
+            <hr>
+            
+            <div class="pest-title">Pythium</div>
+            <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+            <hr>
+
+</div>
+</div>
+
+     <div id="pests">
+    <div data-lang="en">
+        <div class="section-title">Pests</div>
+        
+        <div class="pest-title">Root Cutters (Wireworm)</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
+        <hr>
+        
+        <div class="pest-title">Blissus</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
+        <hr>
+        
+        <div class="pest-title">Symphylans</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
+        <hr>
+        
+        <div class="pest-title">Aphids</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> Cucumber, chili, jalapeño, tomato, cherry tomato, lettuce</p>
+        <hr>
+        
+        <div class="pest-title">Red Spider Mite</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
+        <hr>
+        
+        <div class="pest-title">Whitefly</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
+        <hr>
+        
+        <div class="pest-title">Nematodes</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
+        <hr>
+        
+        <div class="pest-title">Leaf Miners</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
+        <hr>
+        
+        <div class="pest-title">Thrips</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> All</p>
+        <hr>
+        
+        <div class="pest-title">Spodoptera</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> Cucumber, chili, jalapeño, tomato, cherry tomato, lettuce</p>
+        <hr>
+        
+        <div class="pest-title">Diaphania Hyalinata</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> Cucumber, zucchini, kabocha squash, buttercup squash</p>
+        <hr>
+        
+        <div class="pest-title">Diaphania Nitidalis</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> Cucumber, zucchini, kabocha squash, buttercup squash</p>
+        <hr>
+        
+        <div class="pest-title">Manduca</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> Chili, jalapeño, tomato, cherry tomato</p>
+        <hr>
+        
+        <div class="pest-title">Cabbage Looper</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> Cabbage</p>
+        <hr>
+        
+        <div class="pest-title">Scales</div>
+        <p>Could appear at any time. <br><strong>Crops Affected:</strong> Aromatic plants</p>
+        <hr>
+    </div>
+
+    <div data-lang="es" style="display:none;">
+        <div class="section-title">Plagas</div>
+        
+        <div class="pest-title">Cortadores de raíz (Wireworm)</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+        <hr>
+        
+        <div class="pest-title">Blissus</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+        <hr>
+        
+        <div class="pest-title">Sinfilidos</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+        <hr>
+        
+        <div class="pest-title">Pulgones o áfidos</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Pepino, chile, jalapeño, jitomate, tomate cherry, lechuga</p>
+        <hr>
+        
+        <div class="pest-title">Araña Roja</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+        <hr>
+        
+        <div class="pest-title">Mosca Blanca</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+        <hr>
+        
+        <div class="pest-title">Nematodos</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+        <hr>
+        
+        <div class="pest-title">Minadores</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+        <hr>
+        
+        <div class="pest-title">Trips</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Todos</p>
+        <hr>
+        
+        <div class="pest-title">Spodoptera</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Pepino, chile, jalapeño, jitomate, tomate cherry, lechuga</p>
+        <hr>
+        
+        <div class="pest-title">Diaphania Hyalinata</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Pepino, calabacín, calabaza kabocha, calabaza mantequilla</p>
+        <hr>
+        
+        <div class="pest-title">Diaphania Nitidalis</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Pepino, calabacín, calabaza kabocha, calabaza mantequilla</p>
+        <hr>
+        
+        <div class="pest-title">Manduca</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Chile, jalapeño, jitomate, tomate cherry</p>
+        <hr>
+        
+        <div class="pest-title">Larva del repollo</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Repollo</p>
+        <hr>
+        
+        <div class="pest-title">Escamas</div>
+        <p>Puede aparecer en cualquier momento. <br><strong>Cultivos Afectados:</strong> Plantas aromáticas</p>
+        <hr>
+    </div>
+</div>
+</div>
+
+
+      <div id="photo-gallery">
+    <div data-lang="en">
+        <div class="section-title">Photo Gallery</div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="pest1.jpg" alt="Damping Off">
+                <strong class="gallery-title">Damping Off</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest2.jpg" alt="Downy Mildew">
+                <strong class="gallery-title">Downy Mildew</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest3.jpg" alt="Alternaria">
+                <strong class="gallery-title">Alternaria</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest4.jpg" alt="Sclerotium">
+                <strong class="gallery-title">Sclerotium</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest5.jpg" alt="Pythium">
+                <strong class="gallery-title">Pythium</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest6.jpg" alt="Fusarium">
+                <strong class="gallery-title">Fusarium</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest7.jpg" alt="Mycosphaerella">
+                <strong class="gallery-title">Mycosphaerella</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest8.jpg" alt="Powdery Mildew">
+                <strong class="gallery-title">Powdery Mildew</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest9.jpg" alt="Erwinia">
+                <strong class="gallery-title">Erwinia</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest10.jpg" alt="Xanthomonas">
+                <strong class="gallery-title">Xanthomonas</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest11.jpg" alt="Anthracnose">
+                <strong class="gallery-title">Anthracnose</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest12.jpg" alt="Phytophthora">
+                <strong class="gallery-title">Phytophthora</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest13.jpg" alt="Root Cutters">
+                <strong class="gallery-title">Root Cutters</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest14.jpg" alt="Blissus">
+                <strong class="gallery-title">Blissus</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest15.jpg" alt="Symphylans">
+                <strong class="gallery-title">Symphylans</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest16.jpg" alt="Aphids">
+                <strong class="gallery-title">Aphids</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest17.jpg" alt="Red Spider Mite">
+                <strong class="gallery-title">Red Spider Mite</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest18.jpg" alt="Whitefly">
+                <strong class="gallery-title">Whitefly</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest19.jpg" alt="Leaf Miners">
+                <strong class="gallery-title">Leaf Miners</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest20.jpg" alt="Thrips">
+                <strong class="gallery-title">Thrips</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest21.jpg" alt="Spodoptera">
+                <strong class="gallery-title">Spodoptera</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest22.jpg" alt="Melonworm">
+                <strong class="gallery-title">Melonworm</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest23.jpg" alt="Pickleworm">
+                <strong class="gallery-title">Pickleworm</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest24.jpg" alt="Tobacco hornworm">
+                <strong class="gallery-title">Tobacco hornworm</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest25.jpg" alt="Cabbage Looper">
+                <strong class="gallery-title">Cabbage Looper</strong>
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="pest2.jpg" alt="Downy Mildew">
-            <strong class="gallery-title">Downy Mildew</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest3.jpg" alt="Alternaria">
-            <strong class="gallery-title">Alternaria</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest4.jpg" alt="Sclerotium">
-            <strong class="gallery-title">Sclerotium</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest5.jpg" alt="Pythium">
-            <strong class="gallery-title">Pythium</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest6.jpg" alt="Fusarium">
-            <strong class="gallery-title">Fusarium</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest7.jpg" alt="Mycosphaerella">
-            <strong class="gallery-title">Mycosphaerella</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest8.jpg" alt="Powdery Mildew">
-            <strong class="gallery-title">Powdery Mildew</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest9.jpg" alt="Erwinia">
-            <strong class="gallery-title">Erwinia</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest10.jpg" alt="Xanthomonas">
-            <strong class="gallery-title">Xanthomonas</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest11.jpg" alt="Anthracnose">
-            <strong class="gallery-title">Anthracnose</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest12.jpg" alt="Phytophthora">
-            <strong class="gallery-title">Phytophthora</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest13.jpg" alt="Root Cutters">
-            <strong class="gallery-title">Root Cutters</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest14.jpg" alt="Blissus">
-            <strong class="gallery-title">Blissus</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest15.jpg" alt="Symphylans">
-            <strong class="gallery-title">Symphylans</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest16.jpg" alt="Aphids">
-            <strong class="gallery-title">Aphids</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest17.jpg" alt="Red Spider Mite">
-            <strong class="gallery-title">Red Spider Mite</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest18.jpg" alt="Whitefly">
-            <strong class="gallery-title">Whitefly</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest19.jpg" alt="Leaf Miners">
-            <strong class="gallery-title">Leaf Miners</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest20.jpg" alt="Thrips">
-            <strong class="gallery-title">Thrips</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest21.jpg" alt="Spodoptera">
-            <strong class="gallery-title">Spodoptera</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest22.jpg" alt="Melonworm">
-            <strong class="gallery-title">Melonworm</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest23.jpg" alt="Pickleworm">
-            <strong class="gallery-title">Pickleworm</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest24.jpg" alt="Tobacco hornworm">
-            <strong class="gallery-title">Tobacco hornworm</strong>
-        </div>
-        <div class="gallery-item">
-            <img src="pest25.jpg" alt="Cabbage Looper">
-            <strong class="gallery-title">Cabbage Looper</strong>
+    </div>
+
+    <div data-lang="es" style="display:none;">
+        <div class="section-title">Galería de Fotos</div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="pest1.jpg" alt="Damping Off">
+                <strong class="gallery-title">Damping Off</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest2.jpg" alt="Downy Mildew">
+                <strong class="gallery-title">Mildiú velloso</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest3.jpg" alt="Alternaria">
+                <strong class="gallery-title">Alternaria</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest4.jpg" alt="Sclerotium">
+                <strong class="gallery-title">Sclerothium</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest5.jpg" alt="Pythium">
+                <strong class="gallery-title">Pythium</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest6.jpg" alt="Fusarium">
+                <strong class="gallery-title">Fusarium</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest7.jpg" alt="Mycosphaerella">
+                <strong class="gallery-title">Mycosphaerella</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest8.jpg" alt="Powdery Mildew">
+                <strong class="gallery-title">Mildiú polvoriento</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest9.jpg" alt="Erwinia">
+                <strong class="gallery-title">Erwinia</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest10.jpg" alt="Xanthomonas">
+                <strong class="gallery-title">Xanthomonas</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest11.jpg" alt="Anthracnose">
+                <strong class="gallery-title">Antracnosis</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest12.jpg" alt="Phytophthora">
+                <strong class="gallery-title">Phytophthora</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest13.jpg" alt="Root Cutters">
+                <strong class="gallery-title">Sinfílido</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest14.jpg" alt="Blissus">
+                <strong class="gallery-title">Blissus</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest15.jpg" alt="Symphylans">
+                <strong class="gallery-title">Agriotes</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest16.jpg" alt="Aphids">
+                <strong class="gallery-title">Afidos</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest17.jpg" alt="Red Spider Mite">
+                <strong class="gallery-title">Araña Roja</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest18.jpg" alt="Whitefly">
+                <strong class="gallery-title">Mosca Blanca</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest19.jpg" alt="Leaf Miners">
+                <strong class="gallery-title">Minadores</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest20.jpg" alt="Thrips">
+                <strong class="gallery-title">Trips</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest21.jpg" alt="Spodoptera">
+                <strong class="gallery-title">Spodoptera frugiperda</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest22.jpg" alt="Melonworm">
+                <strong class="gallery-title">Diaphania hialynata</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest23.jpg" alt="Pickleworm">
+                <strong class="gallery-title">Diaphania nitidalis</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest24.jpg" alt="Tobacco hornworm">
+                <strong class="gallery-title">Manduca sexta</strong>
+            </div>
+            <div class="gallery-item">
+                <img src="pest25.jpg" alt="Cabbage Looper">
+                <strong class="gallery-title">Larva del repollo</strong>
+            </div>
         </div>
     </div>
 </div>
 
 
-
     </div>
     <footer>
-        <p>&copy; 2024 Creciendo Juntos Farming Online Textbook</p>
+        <p>&copy; 2024 Creciendo Juntos Libro de texto en línea - Agricultura</p>
         <img src="image.png" alt="Creciendo Juntos Logo">
     </footer>
 </body>
